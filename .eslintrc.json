@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:github/recommended",
+        "plugin:unicorn/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "react-refresh", "@typescript-eslint", "github", "unicorn"],
+    "settings": { "react": { "version": "detect" } },
+    "rules": {
+        "react-refresh/only-export-components": "warn",
+        "unicorn/filename-case": "off",
+        "unicorn/prevent-abbreviations": [
+            "error",
+            { "replacements": { "e": false, "res": false, "req": false, "props": false, "env": false } }
+        ],
+        "unicorn/no-await-expression-member": "off",
+        "prettier/prettier": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "filenames/match-regex": 0,
+        "camelcase": 0,
+        "i18n-text/no-en": 0,
+        "eslint-comments/no-use": 0,
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "react/display-name": 0
+    }
+}
