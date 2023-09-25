@@ -11,17 +11,17 @@ const FormSchema = z.object({
     count: z.coerce.number().min(10).max(20),
 });
 
-type FormTypes = z.infer<typeof FormSchema>;
+type FormType = z.infer<typeof FormSchema>;
 
 const App = () => {
-    const form = useForm<FormTypes>({ resolver: zodResolver(FormSchema) });
+    const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
 
-    const handleSubmit = (value: FormTypes) => {
+    const handleSubmit = (value: FormType) => {
         console.log(value);
     };
 
     return (
-        <Form form={form} onSubmit={handleSubmit} className="p-4">
+        <Form form={form} onSubmit={handleSubmit}>
             <Input
                 label="Firstname"
                 required
